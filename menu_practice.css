@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* 리스트의 목록 표시 삭제 */
+ul{list-style: none;}
+
+/* 리스트 선택 (list는 block, a는 inline) */
+
+/* 1. 전체 선택: 현재 단계에서는 하위선택자( ), 자식 선택자(>)의 구분이 되지 않음 */
+    ul li{background: sandybrown;}
+/* 2. submenu만 선택: a 태그는 inline이기 때문에 글자에만 색깔 적용, li는 블락이기 때문에 전체 적용 */
+                                                                    /* 단, 기본 margin, padding이 있어 사방에 여백이 생김 */
+    ul li ul{background:beige;}
+    ul li ul a{background: skyblue;}
+/* 3. Main menu 1,2,3,4만 적용: body 바로 아래의 ul, 그 ul바로 아래의 li, 그 바로 아래의 a 태그 */
+    body>ul>li>a{background: salmon;}
+/* 4. sub menu 전체 적용 : 1번과 마찬가지로 ( ), (>) 구분이 없다 모두 명시해 줬기 때문 */
+    body ul li ul li a{background:lawngreen;}
+    /* body li li a{background:lawngreen;} 생략 */
+/* 5. 2번째 메뉴의 submenu만 선택 : :앞의 요소 중에서 2번째 */
+    ul li:nth-child(2) li{background: paleturquoise;}
+/* 6. type 선택자로 각 요소의 2번째 sub menu만 선택 */
+    /* wrong!! 이상한 구조가 나온 이유는 ul안에 ul이 중첩되어있어서, 어떤 ul인지 인지 하지 못해서(body 등으로 꼭 명시해 줄 것) */
+    /* ul>li:nth-of-type(2n){background: seagreen;}  mean : ul 바로 한 단계 아래의 li중 2번째 요소, (body>ul)도 (body>ul>li>ul)도 인지하기 때문  */
+    /* ul>li(모든 리스트)의 자식(손자 포함) 요소 중에서 2번째 자식, 즉 body>ul>li 이후의 자손 중에서 파악하기 때문 */
+    ul>li :nth-of-type(2n) a{background: cornflowerblue;}
+
+    /* 순수 글자만 선택하고 싶다면 inline인 a태그를 끝으로,  전체 블럭을 원한다면 block요소인 ul li 등을 끝으로*/
+
+
+
+
+
