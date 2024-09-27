@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* ==========공통 설정========== */
+*{margin:0;}
+a{text-decoration: none;}
+/* 글머리기호 자리? 기본 패딩 없앰 */
+ul{list-style: none; padding-left:0;}
+
+/* ==========main_menu========== */
+.main_menu{background: greenyellow; display: flex; height: 34px;}
+                                /* 자식요소를 block 요소로 배치  */
+                    /* 품고있는 자식 텍스트를 배치 */
+.main_menu>li{width:20%; text-align: center;}
+.main_menu>li:nth-child(2n){background: rgb(82, 247, 82);}
+.main_menu>li>a{color: white; font-size:25px;}
+.main_menu>li>a:hover+ul{display:flex;}
+
+/* ==========sub menu========== */
+/* ul 안의 li의 배치 */
+/* 단, 너비 문제는 좀 더 유동적으로 짜야 함 */
+.main_menu ul{display: none; flex-direction: column;}
+.main_menu li li{background: rgb(154, 255, 54);}
+.main_menu ul a{color: #fff;}
+
+/* 메뉴와 p의 글씨가 겹쳐보였었다. p.367 */
+p{position:relative; z-index: -100;}
