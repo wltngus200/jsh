@@ -4,10 +4,10 @@ ul{list-style: none;}
 /* float 속성으로 block 요소들(크기가 있는 요소)을 좌우배치 되도록 함
  부모가 float된 자식요소의 높이를 인지하지 못함
  감싸는 속성을 clear해 줘야지 자식 요소를 원하는 대로 배치 가능 p.270 */
-body>ul{background: #000;}
-ul ul{background:#666; position:absolute; display:none;
+body>ul{background: cornflowerblue; height: 30px;}
+ul ul{background:skyblue; position:absolute; display:none;
     /* display: none와 병행? -> 포지션에 따라서 top:100%; left:0 해도 화면에 보임 */
-    top:100%; left:0;
+    top:100%; left:10px;
 }
 /* clear은 부모요소에 적용 li를 높이로 가졌는데 높이가 없어져버리는 것 */
 body>ul:after{content:''; clear:both; display: block;}
@@ -16,5 +16,9 @@ body>ul>li{float:left; position:relative;}
 body>ul>li ul li{white-space: nowrap;}
 body>ul>li:hover ul{display: block;}
 
+body>ul>li>a{color:#fff;font-size: 20px;}
 /* ====================== 여백 ===================== */
 ul ul{padding-left: 0;}
+body>ul>li>a{margin-right: 40px;}
+ul ul li a{color:#fff; font: size 14px; margin-top:10px; display: inline-block;}
+ul ul li:nth-last-child(1){margin-bottom:10px;}
