@@ -28,3 +28,22 @@ body{height:5000px; background: #444;}
 .side-bar ul>li>a{display:block; color:white; font-size:1.4rem; font-weight: bold; padding-top:20px; padding-bottom:20px; padding-left:50px;}
 
 /* =====▲스크롤을 움직여도 고정되어있는 사이드 바 완성▲===== */
+
+/* 우측으로 등장하는 서브메뉴 position */
+
+.side-bar>ul>li{position: relative;}
+/* hover시 main menu의 반응 */              /* 원래 코드상 선이 있으나 주석처리 함 */
+.side-bar ul>li:hover>a{background: #555; /* border-bottom: 1px solid #999; */ }
+/* sub menu 등장 */
+.side-bar>ul>li:hover>ul{display:block; position:absolute; background:#888; top:0; left:100%; width:100%;} 
+/* 추가: 개인적으로 서브 메뉴의 색이 달랐으면 했음 */
+.side-bar>ul ul>li:hover>a{background:#777;}
+
+/* =====▲마우스 hover시 서브메뉴가 드롭되면서 색이 바뀜▲===== */
+
+/* 너비의 80%만큼 왼쪽으로 이동 */
+                /* 코너를 둥글게;       변형 : 위치 이동(좌측으로 80%);                     움직임을 보여줄 시간        */
+.side-bar{border-radius: 20px; transform:translate(calc(var(--side-bar-width)*-0.8), 0); transition:.5s;}
+                            /* 깎인 너비 만큼 */
+.side-bar:hover{transform: translate(-20px, 0);}
+
