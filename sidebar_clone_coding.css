@@ -1,0 +1,30 @@
+/* ==========CSS의 변수(var)========== */
+:root{ /* 변수 선언 어디서든 접근 가능 */
+    /* 선언시에는 --를 붙여주고 호출시에는 var() 사용 */
+    --side-bar-width:270px;
+    /* vh는 viewport의 세로 사이즈 */
+    --sied-bar-height:90vh;
+    /* %는 나에게 주어진 영역이 기준
+      vh는 화면에 보여지는 부분이 기준 */
+}
+
+/* ==========노멀라이즈========== */
+
+                                /* bullet을 없앰 */
+body, ul, li{margin:0; padding:0; list-style: none;}
+                /* 링크들의 밑줄 제거 */
+a{color:inherit; text-decoration: none;}
+
+/* sub-sub-menu 숨기기 */
+.side-bar>ul ul {display:none;}
+/* 스크롤 만들기 */
+body{height:5000px; background: #444;}
+        /* 항상 지정위치에 */
+.side-bar{position:fixed; background: black; width:var(--side-bar-width);
+    min-height:var(--sied-bar-height); margin-top:calc((100vh - var(--sied-bar-height))/2);}
+                                            /* 전체 viewport의 높이에서 sidebar를 뺀 것의 반만큼 */
+/* 모든 메뉴의 a에 속성값 */
+                                            /* root(16px)의 1.4배 */
+.side-bar ul>li>a{display:block; color:white; font-size:1.4rem; font-weight: bold; padding-top:20px; padding-bottom:20px; padding-left:50px;}
+
+/* =====▲스크롤을 움직여도 고정되어있는 사이드 바 완성▲===== */

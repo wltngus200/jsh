@@ -1,7 +1,10 @@
 @charset "utf-8";
-/* body{min-width: 650px;} */
-.sidebar{background: rgba(0,0,0,0.6); color:#fff; transition : background-color;}
+/* 기본 설정(색깔) */
+.sidebar{background: rgba(0,0,0,0.6); color:#fff;}
+
+.sidebar{display:flex; right:90%;}
 hr{border:1px dashed rgba(0,0,0,0.2); margin: 20px auto;}
-.sidebar{position: relative; padding-top:20px;}
 /* left 95%는 삐져나가는데 right:는 괜찮네 */
-.btn{position:absolute; right:3%; top:5%;}
+.btn{position:absolute; right:3%; top:5%; display: inline-block;}
+
+/* 일단 보류 */
