@@ -1,10 +1,25 @@
 @charset "utf-8";
-/* 기본 설정(색깔) */
-.sidebar{background: rgba(0,0,0,0.6); color:#fff;}
-
-.sidebar{display:flex; right:90%;}
+/* 기본 설정(색깔 및 두께 여백) */
+.sidebar{background: #666;; color:#fff;}
 hr{border:1px dashed rgba(0,0,0,0.2); margin: 20px auto;}
-/* left 95%는 삐져나가는데 right:는 괜찮네 */
-.btn{position:absolute; right:3%; top:5%; display: inline-block;}
 
-/* 일단 보류 */
+/* body에도 기본 마진이 있어서 완전히 벽에 붙지는 않음 */
+body{margin:0; display:flex;}
+h1{text-align:center;}
+                    /* margin으로 주게 되면 sidebar 너비가 바뀔 경우 호환.. */
+.paragraph{margin:8px; margin-left:35px;}
+p{margin-left:5px;}
+.sidebar{width:350px; height:100vh; 
+    transform:translateX(-90%); transition:0.7s;
+    /* sidebar가 진출하는 영역 내로 paragraph를 넣음 */
+    position:fixed;
+}
+.sidebar:hover {transform:translateX(0);}
+/* 사이드바에 지나치게 많이 붙음 */
+form{margin: 8px;}
+#msg{width:200px; height:200px;}
+textarea{
+    /* 사용자가 text-area의 사이즈를 임의로 조절할 수 없음 */
+    resize: none;
+    /* label과 높이를 맞춤 */
+    vertical-align: top;}
