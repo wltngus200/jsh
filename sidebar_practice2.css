@@ -1,19 +1,53 @@
 /* cf.https://coolors.co/palette/cdb4db-ffc8dd-ffafcc-bde0fe-a2d2ff */
 /* 색 조합 : #cdb4db, #ffc8dd, #ffafcc, #bde0fe, #a2d2ff */
+/* ==========기초 설정========== */
 body{margin:0;}
-/* body{display: flex;} 이걸 하면 이미지가 짜부됨 */
-.sidebar{color:#999; background:#a2d2ff; padding-left:10px; width:350px;height:100vh;}
+/* image도 flex의 영향을 받아 짜부됨 */
+body{display: flex;}
+h1{text-align: center;}
+:root{--sidebar_width:350px;}
+
+/* ==========sidebar 기초========== */
+.sidebar{color:#999; background:#a2d2ff; padding:10px; width:var(--sidebar_width); height:100vh;}
 hr{border: 2px dashed #bde0fe; margin-right:10px;}
-/* img{display: inline-block; width:32px; height:32px;} 그래서 보완 하는 코드 */
-/* active: 누르는 순간 */
-img:active~div{background:#ffafcc;}
-textarea{
-    resize: none;
-    vertical-align: top;
+/* border는 모두 설정해 주지 않으면 표시 되지 않음 */
+input, textarea{border: 1px #cdb4db solid;}
+textarea{resize: none; vertical-align: top;
     /* 상자 안의 텍스트 위치 */
     text-align: center;
 }
-#close{display:none;}
-#open:active+#close{display:block;}
 
-/* 느낌은 냈는데 클릭하면 나와서 유지가 되어야 함.. */
+/* ==========fontawesome의 크기 설정========== */
+body>label{font-size:30px;}
+
+/* ==========menu 아이콘 설정========== */
+#menu{display: none;}
+
+
+/* ==========동적요소========== */
+#close{display:none;}
+#menu:checked+label #close{display:inline;}
+#menu:checked+label #open{display:none;}
+#menu:checked~.sidebar{background: #ffc8dd;}
+
+/* ==========sidebar 위치 설정========= */
+body{display:flex;}
+body>label{ z-index: 1}
+.sidebar{position: absolute; right:95%}
+
+/* ??????????? */
+#open{position:absolute; left:calc((var(--sidebar_width) * 0.15));}
+
+/* paragraph margin으로 배치 */
+/* padding을 줘서 조금 더 여유를 줌 */      
+/* 1 = 100% */
+.paragraph{margin-left: calc(var(--sidebar_width) * 0.15);}
+
+
+/* 할 일: open, close 버튼 위치 설정, hr선 안 보이게, transition 등 동적 효과 */
+/* check되었을 때 안 되었을 때 위치가 다름 */
+
+/* 습득 내용 :
+    가상요소 active: 누르는 순간
+    +는 바로 뒤의 요소만, ~는 같은 레벨이라면 어느 것이라도 
+*/

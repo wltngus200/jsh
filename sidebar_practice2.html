@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sidebar_practice2.css">
+    <!-- fontawesome cnd에서 코드 복사 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>sidebar2 만들기</title>
     <!-- 이번엔 버튼 클릭시 동작했으면 좋겠는데 -->
 </head>
 <body>
-    <img id="open" src="menu.png" alt="menu bugger">
-    <img id="close" src="close_arrow.png" alt="close button">
+    <!-- cf.029_transition_ex2.html -->
+    <!-- 1. label 안에 checkbox를 넣을 경우: #open, #close의 설정하기가 쉬워짐
+                    + label 안에 넣을 때는 id, for이 없어야 함 
+         2. checkbox->lable 순 배치 : div까지 적용하기가 편하나 가독성이 별로 (채택) -->
+    <input id="menu" type="checkbox">
+    <label for="menu">
+        <i id="open" class="fa-solid fa-bars"></i>
+        <i id="close" class="fa-solid fa-arrow-left"></i>
+    </label>
+    
     <div class="sidebar">
         <h1>- 선물하기 -</h1>
         <form method="get" action="tmp.html">
