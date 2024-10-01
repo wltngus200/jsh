@@ -9,7 +9,7 @@ h1{text-align: center;}
         --sidebar_min:32px;}
 
 /* ==========sidebar 기초========== */
-.sidebar{color:#999; background:#a2d2ff; padding:10px; width:var(--sidebar_width); height:100vh;}
+.sidebar{color:#999; background:#a2d2ff; padding:10px; width:var(--sidebar_width); height:100vh;  transition:0.5s;}
 hr{border: 2px dashed #bde0fe; margin-right:10px;}
 /* border는 모두 설정해 주지 않으면 표시 되지 않음 */
 input, textarea{border: 1px #cdb4db solid;}
@@ -25,8 +25,8 @@ body>label{font-size:30px; box-sizing: border-box;}
 #menu{display: none;}
 
 /* ==========동적요소========== */
-#close{color:rgba(7,7,7,0);}
-#menu:checked+label #close{color:#777;left:calc(var(--sidebar_width) - (var(--sidebar_min))*0.5); transition:0.5s;}
+#close{color:rgba(7,7,7,0); left:0; transition: 0.5s;}
+#menu:checked+label #close{color:#777; left:calc(var(--sidebar_width) - (var(--sidebar_min))*0.5);}
 #menu:checked+label #open{display:none;}
 #menu:checked~.sidebar{background: #ffc8dd; left:0; transition:0.5s}
 
@@ -50,7 +50,7 @@ i{left:12px; color:#777}
 .paragraph{margin-left: calc(var(--sidebar_min) * 2);}
 
 
-/* 할 일: hr선 안 보이게, transition 등 동적 효과 */
+/* hr을 안 보였다가 보이게 하지 못 함이 아쉬움 */
 
 /* 습득 내용 :
     가상요소 active: 누르는 순간
