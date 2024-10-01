@@ -5,7 +5,8 @@ body{margin:0;}
 /* image도 flex의 영향을 받아 짜부됨 */
 body{display: flex;}
 h1{text-align: center;}
-:root{--sidebar_width:350px;}
+:root{--sidebar_width:350px;
+        --sidebar_min:32px;}
 
 /* ==========sidebar 기초========== */
 .sidebar{color:#999; background:#a2d2ff; padding:10px; width:var(--sidebar_width); height:100vh;}
@@ -18,34 +19,38 @@ textarea{resize: none; vertical-align: top;
 }
 
 /* ==========fontawesome의 크기 설정========== */
-body>label{font-size:30px;}
+body>label{font-size:30px; box-sizing: border-box;}
 
 /* ==========menu 아이콘 설정========== */
 #menu{display: none;}
 
-
 /* ==========동적요소========== */
-#close{display:none;}
-#menu:checked+label #close{display:inline;}
+#close{color:rgba(7,7,7,0);}
+#menu:checked+label #close{color:#777;left:calc(var(--sidebar_width) - (var(--sidebar_min))*0.5); transition:0.5s;}
 #menu:checked+label #open{display:none;}
-#menu:checked~.sidebar{background: #ffc8dd;}
+#menu:checked~.sidebar{background: #ffc8dd; left:0; transition:0.5s}
+
 
 /* ==========sidebar 위치 설정========= */
 body{display:flex;}
-body>label{ z-index: 1}
-.sidebar{position: absolute; right:95%}
+body>label{ z-index: 1;}
+/* absolute는 원래 위치에서 떠오르는 것, 기존 위치에서 자신의 좌표값을 파악 */
+.sidebar{position: absolute; left:calc((var(--sidebar_width) - var(--sidebar_min))*-1)}
 
-/* ??????????? */
-#open{position:absolute; left:calc((var(--sidebar_width) * 0.15));}
+/* ==========버튼 위치 설정========== */
+                                                                        /* 마우스를 올렸을 때 포인터가 됨 */
+#open{position:absolute; display:inline-block; cursor: pointer; top:10px}
+#close{position:absolute; top:calc((100vh * 0.5) - 15px); cursor: pointer;}
+/* open{top: }도 그렇고 고정값을 주고 싶진 않은데.. */
+i{left:12px; color:#777}
 
 /* paragraph margin으로 배치 */
 /* padding을 줘서 조금 더 여유를 줌 */      
 /* 1 = 100% */
-.paragraph{margin-left: calc(var(--sidebar_width) * 0.15);}
+.paragraph{margin-left: calc(var(--sidebar_min) * 2);}
 
 
-/* 할 일: open, close 버튼 위치 설정, hr선 안 보이게, transition 등 동적 효과 */
-/* check되었을 때 안 되었을 때 위치가 다름 */
+/* 할 일: hr선 안 보이게, transition 등 동적 효과 */
 
 /* 습득 내용 :
     가상요소 active: 누르는 순간
