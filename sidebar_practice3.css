@@ -15,32 +15,40 @@ label:nth-of-type(4){background:#AED9E0}
 /* ===========flex로 sidebar 구성========== */
 body{display: flex;} /* 자동적으로 block으로 바뀜 단, 1단계 자식만 */
 input{display: none;}
-label div{display:none; transition:0.5s; position:absolute; left:-200px;}
 label{ /* text 세로쓰기;           text 방향 돌리기; */
     writing-mode: vertical-rl; text-orientation: upright; text-transform: uppercase; 
     text-align: center; align-content: center; letter-spacing: 3px;}
 
+/* ===========sidebar 확장 메뉴========== */
+label div{display:none; transition:0.5s; position:absolute; left:30px;}
+
+/* ===========sidebar 닫기 버튼========== */
+label:nth-last-child(1){display:none; font-size:30px; color:#999; position:absolute; left:70vw; top:-50px; }
+    /* 1번부터 입력한 숫자까지 */
+input:nth-of-type(-n+4):checked~:nth-last-child(1){display:inline;}
+
 /* ===========radio와 div연결========== */
 /* 속성선택자 단순 = 비교는 안 됨 */
 /* 어떤 radio라도 checked라면 */
+input[type="radio"]:checked+label{border-top-right-radius:0; border-bottom-right-radius:0; font-weight:bold;}
 input[type="radio"]:checked+label>div{display: block; background: inherit; width:70vw; height:100vh; top:0;
-    writing-mode: horizontal-tb; text-align: left; padding:10px; box-sizing: border-box;}
+    writing-mode: horizontal-tb; text-align: left; padding:10px; box-sizing: border-box; font-weight: normal;}
 
-/* ===========동적 효과========== */
-form div{left:30px; margin:0;}
+/* ===========애니메이션========== */
+form label>div{animation-name:open; animation-duration: 0.3s;}
 
+@keyframes open {
+    from {width:0;}  
+}
 
-/* ===========button========== */
-button{display: none;}
+/* ===========button(JS)========== */
+/* button{display: none;}
 input[name^=tap]:checked~button{
     display:block; position:absolute; left:70vw; top:10px;
-    background:none; border:none; font-size:30px; color:#999;}
-
-/* 탭 닫기, 동적효과, 배경색 */
-/* 탭 닫는건 radio한 개 더 추가해서 X표로 만들어볼까 되려나 
-    마지막 요소는 안 보이게 하는 거 안 하고 항상 같은 위치에..... 하면 안되겠네 일단 ㄱㄱ */
+    background:none; border:none; font-size:30px; color:#999;} */
     
-/* 알게 된 점: 스크롤은 내가 label을 1/4씩 차지하게 두고, 버튼을 추가해서 */
     
 /* ===========paragraph========== */
 .paragraph{margin: 10px;}
+    
+/* 알게 된 점: 스크롤은 내가 label을 1/4씩 차지하게 두고, 버튼을 추가해서 */
