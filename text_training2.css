@@ -1,0 +1,25 @@
+p{font-size:20px;}
+
+/* ==========text-overflow = 영역 밖 텍스트========== */
+/* cf. https://devjhs.tistory.com/602 */
+.overflow div{width:100px; border:1px solid silver; overflow:hidden; white-space:nowrap;}
+.overflow div:nth-of-type(2){text-overflow: clip;} 
+.overflow div:nth-of-type(3){text-overflow: ellipsis;}
+
+/* ==========writing-mode = 쓰기 방향========== */
+/* cf. https://codingeverybody.kr/css-writing-mode-%EC%86%8D%EC%84%B1/ */
+.writing-mode{height:200px; width:200px;}
+.writing-mode p:nth-of-type(1){writing-mode:horizontal-tb;}
+.writing-mode p:nth-of-type(2){writing-mode:vertical-lr;}
+.writing-mode p:nth-of-type(3){writing-mode:vertical-rl;}
+.writing-mode p:nth-of-type(4){writing-mode:sideways-lr;}
+.writing-mode p:nth-of-type(5){writing-mode:sideways-rl;}
+
+/* ==========text-orientation = 글씨 방향========== */
+/* cf.https://tensdiary.tistory.com/entry/CSS-writing-mode-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%84%B8%EB%A1%9C-%EC%93%B0%EA%B8%B0-%EB%AA%A8%EB%93%9C?category=711806 */
+.text-orientation{position:absolute; left:300px;}
+.text-orientation p:nth-of-type(1){writing-mode:vertical-lr; text-orientation:upright;}
+.text-orientation p:nth-of-type(2){writing-mode:vertical-lr; text-orientation:sideways;}
+.text-orientation p:nth-of-type(3){writing-mode:vertical-lr; text-orientation:sideways-right;}
+.text-orientation p:nth-of-type(4){writing-mode:vertical-lr; text-orientation:mixed;}
+

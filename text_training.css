@@ -1,0 +1,30 @@
+p{font-size:20px;}
+
+/* ==========text-align = 텍스트 정렬========== */
+.align p:nth-of-type(1){text-align: left;}
+.align p:nth-of-type(2){text-align: center;}
+.align p:nth-of-type(3){text-align: right;}
+
+/* ==========text-decoration = 텍스트 밑줄========== */
+.decoration p:nth-of-type(1){text-decoration: underline;}
+.decoration p:nth-of-type(2){text-decoration: line-through;}
+.decoration p:nth-of-type(3){text-decoration:overline;}
+
+.decoration p:nth-of-type(4){text-decoration-line: underline; text-decoration-style: dashed;}
+.decoration p:nth-of-type(5){text-decoration-line: underline; text-decoration-style:dotted;}
+.decoration p:nth-of-type(6){text-decoration-line: underline; text-decoration-style: wavy;}
+
+.decoration p:nth-of-type(7){text-decoration-line: underline; text-decoration-color: coral;}
+.decoration p:nth-of-type(8){text-decoration-line: underline; text-decoration-thickness: 10px;}
+
+                                                                            /* value = auto|none|all */
+.decoration p:nth-of-type(9){text-decoration-line: underline; text-decoration-skip-ink: auto;}
+                                                                    /* 간격 띄우기(음수 가능) */
+.decoration p:nth-of-type(10){text-decoration-line: underline; text-underline-offset:10px;}
+                                    /* auto 기본(폰트에 붙어서) | from-font 살짝 떨어짐 | under 제법 떨어짐 */
+.decoration p:nth-of-type(11){text-decoration-line: underline; text-underline-position: under;}
+
+/* ==========text-transform = 변형========== */
+.transform p:nth-of-type(1){text-transform:uppercase;}
+.transform p:nth-of-type(2){text-transform:lowercase;}
+.transform p:nth-of-type(3){text-transform:capitalize;}
