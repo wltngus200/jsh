@@ -5,9 +5,15 @@ body{display:flex;}
 .second{background:yellow ;}
 .third{background: green;}
 .forth{background: blue;}
-.forth, .third{display:none;}
+.forth, .third, .second{display:none;}
 
-body div{height:100vh; padding: 20px;}
+body div{height:100vh; padding: 20px; width:50vw;}
 i{font-size:30px; cursor: pointer;}
 img{margin:10px;}
 h1{margin:10px; margin-left:0;}
+
+body>i:nth-of-type(1){position:absolute; top:50vh; right: 95vw; }
+body>i:nth-of-type(2){position:absolute; top:50vh; left: 95vw;}
+body>i:active {display:none;}
+
+body>i:nth-of-type(2):active~div:nth-of-type(n){transition:0.5s}
